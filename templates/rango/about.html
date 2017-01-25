@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load staticfiles %} <!-- New line -->
+<html>
+
+    <head>
+        <title>Rango About</title>
+    </head>
+
+    <body>
+        <h1>Rango says hello!</h1>
+        <div>
+            How do you think the Rango? <br />
+            This tutorial has been put together by Jiaqing Ran <br />
+            <strong>{{ Level }}</strong><br />
+        </div>
+        <div>
+            <a href='/rango/'>Index</a><br />
+            <img src="{% static 'images/cat.jpg' %}"
+                 alt="Picture of Cat" /> <!-- New line -->
+        </div>
+    </body>
+
+</html>

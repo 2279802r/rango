@@ -10,9 +10,18 @@ def index(request):
     # Note that the first parameter is the template we wish to use.
     return render(request, 'rango/index.html', context=context_dict)
 
+def about(request):
+    # Construct a dictionary to pass to the template engine as its context.
+    # Note the key Level is the same as {{ Level }} in the template!
+    context_dict = {'Level': 'Very difficult,difficult, normal, easy, very easy'}
+    # Return a rendered response to send to the client.
+    # We make use of the shortcut function to make our lives easier.
+    # Note that the first parameter is the template we wish to use.
+    return render(request, 'rango/about.html', context=context_dict)
+
 # for chapter 3
 # def index(request):
 #     return HttpResponse("Rango says hey there partner! <br/> <a href='/rango/about/'>About</a>.")
 
-def about(request):
-    return HttpResponse("Rango says here is the about page. <br/> <a href='/rango/'>Index</a>.")
+# def about(request):
+#     return HttpResponse("Rango says here is the about page. <br/> <a href='/rango/'>Index</a>.")
