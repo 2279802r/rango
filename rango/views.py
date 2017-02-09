@@ -38,7 +38,13 @@ def about(request):
     # Return a rendered response to send to the client.
     # We make use of the shortcut function to make our lives easier.
     # Note that the first parameter is the template we wish to use.
-    return render(request, 'rango/about.html', context=context_dict)
+    # return render(request, 'rango/about.html', context=context_dict)
+
+    # prints out whether the method is a GET or a POST
+    print(request.method)
+    # prints out the user name, if no one is logged in it prints `AnonymousUser`
+    print(request.user)
+    return render (request, 'rango/about.html', {})
 
 # for chapter 6
 def show_category(request, category_name_slug):
@@ -117,7 +123,7 @@ def add_page(request, category_name_slug):
             print(form.errors)
 
     context_dict = {'form':form, 'category':category}
-    
+
     return render(request, 'rango/add_page.html', context_dict)
 
 # for chapter 3

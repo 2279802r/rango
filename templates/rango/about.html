@@ -1,26 +1,18 @@
-<!DOCTYPE html>
-{% load staticfiles %} <!-- New line -->
-<html>
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
 
-    <head>
-        <title>Rango About</title>
-    </head>
+{% block title_block %}
+    About
+{% endblock %}
 
-    <body>
-        <h1>Rango says hello!</h1>
-        <div>
-            How do you think the Rango? <br />
-            This tutorial has been put together by Jiaqing Ran <br />
-            <strong>{{ Level }}</strong><br />
-        </div>
-        <div>
-            <a href='/rango/'>Index</a><br />
-            <img src="{{MEDIA_URL}}cat.jpg"
-                 alt="Picture of Lovely Cat">
-            <img src="{% static 'images/rangoCat.jpg' %}"
-                 alt="Picture of Cat" /> <!-- New line -->
-
-        </div>
-    </body>
-
-</html>
+{% block body_block %}
+    <h1>Rango says hello!</h1>
+    <div>
+        This tutorial has been put together by Jiaqing Ran <br />
+        <strong>{{ boldmessage }}</strong><br />
+    </div>
+    <div>
+        <img src="{{MEDIA_URL}}cat.jpg" alt="Picture of Lovely Cat">
+        <img src="{% static 'images/rangoCat.jpg' %}" alt="Picture of Cat" /> <!-- New line -->
+    </div>
+{% endblock %}
